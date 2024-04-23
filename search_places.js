@@ -18,11 +18,13 @@ res.write("url is: " + path + "<hr>");
   }
   else if (path == "/process") {
     res.write ("Processing, the value of place is: " + querystr);
+    res.write("21");
     const MongoClient = require('mongodb').MongoClient;
     const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     
-
+    res.write("25");
     MongoClient.connect(url2, async function(err, mydb) {
+        res.write("27");
         if(err) { res.write(err); }
         else {
             var dbo = mydb.db("problemSet3-4");
