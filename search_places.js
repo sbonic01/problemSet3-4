@@ -19,10 +19,10 @@ res.write("url is: " + path + "<hr>");
   else if (path == "/process") {
     res.write ("Processing, the value of place is: " + querystr);
     const MongoClient = require('mongodb').MongoClient;
-    const url = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     
 
-    MongoClient.connect(url, async function(err, mydb) {
+    MongoClient.connect(url2, async function(err, mydb) {
         if(err) { res.write(err); }
         else {
             var dbo = mydb.db("problemSet3-4");
