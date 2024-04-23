@@ -1,5 +1,5 @@
 {
-  "name": "placefinder",
+  "name": "search_places",
   "version": "1.0.0",
   "description": "find places",
   "main": "search_places.js",
