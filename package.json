@@ -1,0 +1,19 @@
+{
+  "name": "placefinder",
+  "version": "1.0.0",
+  "description": "find places",
+  "main": "search_places.js",
+  "scripts": {
+  "start": "node search_places.js"
+},
+  "repository": {
+  "type": "git",
+  "url": ""
+},
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  "url": ""
+},
+  "homepage": ""
+}
