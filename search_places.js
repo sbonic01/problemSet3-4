@@ -20,7 +20,7 @@ res.write("url is: " + path + "<hr>");
     res.write ("Processing, the value of place is: " + querystr);
     res.write("21");
     const MongoClient = require('mongodb').MongoClient;
-    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/problemSet3-4?retryWrites=true&w=majority&appName=Cluster0";
     
     res.write("25");
     MongoClient.connect(url2, async function(err, mydb) {
