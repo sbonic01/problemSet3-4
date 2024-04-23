@@ -27,7 +27,7 @@ res.write("url is: " + path + "<hr>");
         else {
             var dbo = mydb.db("problemSet3-4");
             var collection = dbo.collection('places');
-            res.write("In here")
+            res.write("In here");
 
             // Check if the entry is a zip code or a place
             isPlace = true;
