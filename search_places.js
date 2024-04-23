@@ -23,7 +23,7 @@ res.write("url is: " + path + "<hr>");
     
 
     MongoClient.connect(url, async function(err, mydb) {
-        if(err) { console.log(err); }
+        if(err) { res.write(err); }
         else {
             var dbo = mydb.db("problemSet3-4");
             var collection = dbo.collection('places');
@@ -43,7 +43,7 @@ res.write("url is: " + path + "<hr>");
             // }
             // result = collection.find(theQuery);
 
-            // If place is not in db, write some message
+            // // If place is not in db, write some message
             // if ((await result.count() === 0)) {
             //     if (isPlace) {res.write('This place is not in our database');}
             //     else {res.write('This zipcode is not in our database');}
@@ -51,13 +51,13 @@ res.write("url is: " + path + "<hr>");
             //     result.toArray(function(err, items) {
 
             //         if (err) {
-            //           console.log("Error: " + err);
+            //           res.write("Error: " + err);
             //         } 
             //         else 
             //         {
-            //           console.log("Results: ");
+            //           res.write("Results: ");
             //           for (i=0; i<items.length; i++)
-            //               console.log(items[i].place + ': ' + items[i].zips);		
+            //               res.write(items[i].place + ': ' + items[i].zips);		
             //         }
             //     })   
             // }
