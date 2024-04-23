@@ -20,6 +20,7 @@ res.write("url is: " + path + "<hr>");
     res.write ("Processing, the value of place is: " + querystr);
     const MongoClient = require('mongodb').MongoClient;
     const url = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    
 
     MongoClient.connect(url, async function(err, mydb) {
         if(err) { console.log(err); }
@@ -27,20 +28,20 @@ res.write("url is: " + path + "<hr>");
             var dbo = mydb.db("problemSet3-4");
             var collection = dbo.collection('places');
 
-            // Check if the entry is a zip code or a place
-            isPlace = true;
-            if (isNaN(querystr)) {
-                isPlace = false;
-            }
+            // // Check if the entry is a zip code or a place
+            // isPlace = true;
+            // if (isNaN(querystr)) {
+            //     isPlace = false;
+            // }
 
-            // It sounds like whether they enter a zip code or place we still output the place and all the associated zip codes
-            // Handle place
-            if (isPlace) {
-                theQuery = {place: querystr};
-            } else {
-                theQuery = {zips: querystr};
-            }
-            result = collection.find(theQuery);
+            // // It sounds like whether they enter a zip code or place we still output the place and all the associated zip codes
+            // // Handle place
+            // if (isPlace) {
+            //     theQuery = {place: querystr};
+            // } else {
+            //     theQuery = {zips: querystr};
+            // }
+            // result = collection.find(theQuery);
 
             // If place is not in db, write some message
             // if ((await result.count() === 0)) {
