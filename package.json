@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "mongodb": "4.0"
+  },
   "name": "search_places",
   "version": "1.0.0",
   "description": "find places",
