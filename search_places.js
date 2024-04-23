@@ -43,23 +43,23 @@ res.write("url is: " + path + "<hr>");
             result = collection.find(theQuery);
 
             // If place is not in db, write some message
-            if ((await result.count() === 0)) {
-                if (isPlace) {res.write('This place is not in our database');}
-                else {res.write('This zipcode is not in our database');}
-            } else {
-                result.toArray(function(err, items) {
+            // if ((await result.count() === 0)) {
+            //     if (isPlace) {res.write('This place is not in our database');}
+            //     else {res.write('This zipcode is not in our database');}
+            // } else {
+            //     result.toArray(function(err, items) {
 
-                    if (err) {
-                      console.log("Error: " + err);
-                    } 
-                    else 
-                    {
-                      console.log("Results: ");
-                      for (i=0; i<items.length; i++)
-                          console.log(items[i].place + ': ' + items[i].zips);		
-                    }
-                })   
-            }
+            //         if (err) {
+            //           console.log("Error: " + err);
+            //         } 
+            //         else 
+            //         {
+            //           console.log("Results: ");
+            //           for (i=0; i<items.length; i++)
+            //               console.log(items[i].place + ': ' + items[i].zips);		
+            //         }
+            //     })   
+            // }
             mydb.close();
         }
     })
