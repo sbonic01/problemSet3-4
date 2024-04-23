@@ -16,8 +16,8 @@ res.write("url is: " + path + "<hr>");
             "</form>";
 	  res.write(s);
   }
-//   else if (path == "/process")
-//     res.write ("Processing, the value of place is: " + querystr);
+  else if (path == "/process")
+    res.write ("Processing, the value of place is: " + querystr);
 //     const MongoClient = require('mongodb').MongoClient;
 //     const url = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
