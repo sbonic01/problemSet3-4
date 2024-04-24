@@ -22,12 +22,12 @@ res.write("url is: " + path + "<hr>");
     } else {
         res.write("You entered the zip code " + querystr);
     }
-    res.write("If only MongoDB could connect...");
+    res.write("<br><br>If only MongoDB could connect...");
 
     res.write("21");
     const MongoClient = require('mongodb').MongoClient;
-    // const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-    const url2 = process.env.MONGODB_URI;
+    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/problemSet3-4?retryWrites=true&w=majority&appName=Cluster0";
+    // const url2 = process.env.MONGODB_URI;
     
     res.write("25");
     MongoClient.connect(url2, async function(err, mydb) {
