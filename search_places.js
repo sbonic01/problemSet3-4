@@ -17,7 +17,13 @@ res.write("url is: " + path + "<hr>");
 	  res.write(s);
   }
   else if (path == "/process") {
-    res.write ("Processing, the value of place is: " + querystr);
+    if (isNaN(querystr)) {
+        res.write("You entered the place " + querystr);
+    } else {
+        res.write("You entered the zip code " + querystr);
+    }
+    res.write("If only MongoDB could connect...");
+
     res.write("21");
     const MongoClient = require('mongodb').MongoClient;
     // const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
