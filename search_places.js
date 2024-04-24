@@ -69,7 +69,7 @@ res.write("url is: " + path + "<hr>");
         }
     })
     
-
+    res.write("72");
 
   }
   res.end();
