@@ -32,7 +32,7 @@ res.write("url is: " + path + "<hr>");
     res.write("25");
     MongoClient.connect(url2, async function(err, mydb) {
         res.write("27");
-        if(err) { res.write(err); }
+        if(err) { console.log(err); }
         else {
             var dbo = mydb.db("problemSet3-4");
             var collection = dbo.collection('places');
