@@ -76,7 +76,7 @@ res.write("url is: " + path + "<hr>");
           }
       })
     } catch(error) {
-      console.log(error);
+      console.error(error);
     }
     
     res.write("72");
