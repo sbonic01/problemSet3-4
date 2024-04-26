@@ -1,6 +1,6 @@
 var http = require('http');
 var url = require("url");
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
@@ -24,9 +24,8 @@ var querystr = url.parse(req.url, true).query.place;
     }
     res.write("<br><br>If only MongoDB could connect...");
 
-    res.write("21");
     const MongoClient = require('mongodb').MongoClient;
-    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/problemSet3-4?retryWrites=true&w=majority&appName=Cluster0";
+    const url2 = "mongodb+srv://something123:something123@cluster0.swfkiih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     // const url2 = process.env.MONGODB_URI;
     
     MongoClient.connect(url2, async function(err, mydb) {
