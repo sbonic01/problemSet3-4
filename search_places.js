@@ -55,7 +55,7 @@ var querystr = url.parse(req.url, true).query.place;
                   else {res.write('This zipcode is not in our database');}
               } else {
                 await result.forEach(function(item){
-                  res.write(item.place + ': ' + item.zips);		
+                  res.write('<br>place:' + item.place + '<br>zip codes: ' + item.zips);		
                 }) 
               }
 
