@@ -62,7 +62,7 @@ var querystr = url.parse(req.url, true).query.place;
                   else {console.log('This zipcode is not in our database');}
               } else {
                 await result.forEach(function(item){
-                  console.log(item.place + ': ' + item.zips);		
+                  res.write(item.place + ': ' + item.zips);		
                 }) 
               }
               console.log("line 66");
