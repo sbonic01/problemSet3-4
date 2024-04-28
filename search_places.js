@@ -30,7 +30,7 @@ var querystr = url.parse(req.url, true).query.place;
     
     try {
       MongoClient.connect(url2, async function(err, mydb) {
-          res.write("27");
+          console.log("inside the mongo section");
           if(err) { console.log(err); }
           else {
               var dbo = mydb.db("problemSet3-4");
