@@ -19,9 +19,9 @@ var querystr = url.parse(req.url, true).query.place;
   }
   else if (path == "/process") {
     if (isNaN(querystr)) {
-        res.write("You entered the place " + querystr);
+        res.write("You entered the place " + querystr + "<br>");
     } else {
-        res.write("You entered the zip code " + querystr);
+        res.write("You entered the zip code " + querystr + "<br>");
     }
 
     const MongoClient = require('mongodb').MongoClient;
@@ -55,7 +55,7 @@ var querystr = url.parse(req.url, true).query.place;
                   else {res.write('This zipcode is not in our database');}
               } else {
                 await result.forEach(function(item){
-                  res.write('<br>place:' + item.place + '<br>zip codes: ' + item.zips);		
+                  res.write('<br>place: ' + item.place + '<br>zip codes: ' + item.zips);		
                 }) 
               }
 
