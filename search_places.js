@@ -35,39 +35,44 @@ var querystr = url.parse(req.url, true).query.place;
           else {
               var dbo = mydb.db("problemSet3-4");
               var collection = dbo.collection('places');
-              res.write("In here");
+              console.log("In the else");
 
               // Check if the entry is a zip code or a place
               isPlace = true;
-              if (isNaN(querystr)) {
+              if (!isNaN(querystr)) {
                   isPlace = false;
               }
+
+              res.write("line 46");
 
               // Whether they enter a zip code or place we still output the place and all the associated zip codes
               // Handle place
               if (isPlace) {
-                  theQuery = {place: querystr};
+                  theQuery = {'place': querystr};
               } else {
-                  theQuery = {zips: querystr};
+                  theQuery = {'zips': querystr};
               }
+              console.log("place:" + isPlace);
+              console.log("query:" + theQuery);
               result = await collection.find(theQuery);
-
+              console.log("line 56");
               // If place is not in db, write some message
               if ((await result.count() === 0)) {
-                  if (isPlace) {res.write('This place is not in our database');}
-                  else {res.write('This zipcode is not in our database');}
+                  if (isPlace) {console.log('This place is not in our database');}
+                  else {console.log('This zipcode is not in our database');}
               } else {
                 await result.forEach(function(item){
-                  res.write(item.place + ': ' + item.zips);		
+                  console.log(item.place + ': ' + item.zips);		
                 }) 
               }
+              console.log("line 66");
               mydb.close();
           }
       })
     } catch(err) {
       console.log(err);
     }
-  console.log("outside the mongo section");
+  console.log("after the mongo section");
   }
   res.end();
 
